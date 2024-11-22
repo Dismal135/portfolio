@@ -1,4 +1,8 @@
+'use client'
+
 import { useEffect, useState } from "react"
+import { Button } from "@nextui-org/button"
+
 type quote = {
     quote: string,
     author: string
@@ -19,20 +23,20 @@ export default function Quote () {
         getQuotes();
     },[])
 
-    if(quote === 'loading') {
-        return
-    }
-
     const changeQuote = () => {
         if(quotes) {
             setQuote(quotes[Math.floor(Math.random() * quotes.length)])
         }
     }
 
+    if (quote === 'loading') {
+        return 
+    }
+
     return (
-        <div className="z-50 absolute left-[30%] top-[10%] flex flex-col">
-            {quote.quote}
-            <button onClick={changeQuote}>Change Quote</button>
+        <div className="z-50 absolute font-bold text-xl left-[30%] top-[10%] flex flex-col text-white">
+            "{quote.quote}"
+            <Button variant="shadow" onClick={changeQuote} className="w-fit fixed top-1 ml-4" size="md">Get Quote</Button>
         </div>
     )
 }

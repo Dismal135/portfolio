@@ -4,6 +4,8 @@ import CitySkyline from "@/components/cityscale/cityscale";
 import Clock from "@/components/clock/clock";
 import FerrisWheel from "@/components/ferrisWheel/ferrisWheel";
 import Quote from "@/components/quote/quote";
+import { Button } from "@nextui-org/button";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -11,10 +13,7 @@ export default function Home() {
 
     useEffect(()=>{
         const hour = new Date().getHours();
-        setTimeout(()=>{
-            setIsDay(hour >= 6 && hour < 18)
-        }, 6000)
-
+        setIsDay(hour >= 6 && hour < 18)
         const interval = setInterval(()=>{
             setIsDay(hour >= 6 && hour < 18)
         }, 3600000)
@@ -23,10 +22,11 @@ export default function Home() {
     }, [])
 
     if(isDay === "loading") {
-        return <FerrisWheel />
+        return
     }
   return (
     <>
+    <Button className="fixed top-1 z-50 left-1" as={Link} href="/portfolio">view Portfolio</Button>
     <Clock />
     <CitySkyline isDay={isDay} />
     <Quote />

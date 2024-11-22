@@ -3,8 +3,8 @@
     border-radius: 50%;
     height: 55vw;
     width: 55vw;
-    max-width: 500px;
-    max-height: 500px;
+    max-width: 50px;
+    max-height: 50px;
     animation-name: wheel;
     animation-duration: 10s;
     animation-iteration-count: infinite;
