@@ -2,7 +2,6 @@
 
 import CitySkyline from "@/components/cityscale/cityscale";
 import Clock from "@/components/clock/clock";
-import FerrisWheel from "@/components/ferrisWheel/ferrisWheel";
 import Quote from "@/components/quote/quote";
 import { Button } from "@nextui-org/button";
 import Link from "next/link";

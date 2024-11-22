@@ -35,7 +35,7 @@ export default function Quote () {
 
     return (
         <div className="z-50 absolute font-bold text-xl left-[30%] top-[10%] flex flex-col text-white">
-            "{quote.quote}"
+            {quote.quote}
             <Button variant="shadow" onClick={changeQuote} className="w-fit fixed top-1 ml-4" size="md">Get Quote</Button>
         </div>
     )
