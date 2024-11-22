@@ -1,32 +1,12 @@
 'use client'
 
 import '@/components/cityscale/cityscale.css'
-import { useEffect, useState } from 'react'
-import FerrisWheel from '../ferrisWheel/ferrisWheel';
-import Clock from '../clock/clock';
 
-const CitySkyline = () => {
-    const [isDay, setIsDay] = useState<string | boolean>("loading");
-
-    useEffect(()=>{
-        const hour = new Date().getHours();
-        setTimeout(()=>{
-            setIsDay(hour >= 6 && hour < 18)
-        }, 6000)
-
-        const interval = setInterval(()=>{
-            setIsDay(hour >= 6 && hour < 18)
-        }, 3600000)
-
-        return ()=> clearInterval(interval)
-    }, [])
-
-    if(isDay === "loading") {
-        return <FerrisWheel />
-    }
+const CitySkyline = ({isDay}: {isDay: string | boolean}) => {
 
     return (
-        <><div className={`background-buildings ${isDay ? "sky" : "night-sky"}`}>
+        <>
+        <div className={`background-buildings ${isDay ? "sky" : "night-sky"}`}>
             <div></div>
             <div></div>
             <div className="bb1 building-wrap">
@@ -98,7 +78,6 @@ const CitySkyline = () => {
                 <div></div>
                 <div></div>
             </div>
-            <Clock />
             </>
     )
 }

@@ -22,7 +22,7 @@ export default function Clock() {
 
   return (
     <TimeInput
-    className="w-fit absolute right-1 top-1"
+    className="w-fit absolute right-1 top-1 z-50"
     aria-label="clock"
     value={currentTime}
     onChange={(newTime) => setCurrentTime(newTime)}
