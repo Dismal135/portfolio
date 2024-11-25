@@ -5,6 +5,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --penguin-face: white;
+  --penguin-picorna: orange;
+  --penguin-skin: gray;
 }
 
 @media (prefers-color-scheme: dark) {
