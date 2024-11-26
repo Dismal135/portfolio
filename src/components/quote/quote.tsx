@@ -52,7 +52,7 @@ export default function Quote() {
     <div className="z-50 absolute font-bold text-xl left-[30%] top-[10%] flex flex-col text-white">
       {currentQuote && (
         <>
-          <p className="mb-4">"{currentQuote.quote}"</p>
+          <p className="mb-4">{currentQuote.quote}</p>
           <p className="mb-6"><span className='bg-black p-1'>Author</span> - {currentQuote.author}</p>
         </>
       )}
