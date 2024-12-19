@@ -2,20 +2,95 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@font-face {
+  font-family: 'digital-7';
+  src: url('/fonts/digital-7.ttf') format('truetype'); /* Use the correct path */
+}
+
+.custom-font {
+  font-family: 'digital-7', sans-serif; /* Apply the font */
+  font-size: large;
+}
+
+.car {
+  position: fixed;
+  bottom: 0;
+  width: 30px;
+  height: 15px;
+  animation: car-animation 6s linear infinite;
+}
+
+.car2 {
+  position: fixed;
+  bottom: 0;
+  width: 30px;
+  height: 15px;
+  animation: car-animation 5s linear infinite;
+}
+
+.car3 {
+  position: fixed;
+  bottom: 0;
+  width: 30px;
+  height: 15px;
+  animation: car-animation 4s linear infinite;
+}
+
+@keyframes car-animation {
+  from {
+    left: 0;
+  }
+  to {
+    left: 100%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@media (max-width: 600px) {
+  .car {
+    animation-duration: 4s;
+  }
+  .car2 {
+    animation-duration: 3s;
+  }
+  .car3 {
+    animation-duration: 2s;
+  }
+}
+
+.rocket {
+  animation: rocket-animation 60s infinite linear;
+}
+
+@keyframes rocket-animation {
+  from {
+    left: 40%;
+    top: 40%;
+  }
+  to {
+    left: 60%;
+    top: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  @keyframes rocket-animation {
+    to {
+      left: 80%;
+      top: 0;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  @keyframes rocket-animation {
+    to {
+      left: 100%;
+      top: 0;
+    }
+  }
 }
