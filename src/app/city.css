@@ -21,7 +21,13 @@
 }
 
 .sky {
-   animation: sky-animation 1.5s infinite linear;
+    background: radial-gradient(
+        closest-corner circle at 15% 15%,
+        #ffcf33,
+        #ffcf33 20%,
+        #ffff66 21%,
+        #bbeeff 100%
+    );
 }
 
 @keyframes sky-animation {

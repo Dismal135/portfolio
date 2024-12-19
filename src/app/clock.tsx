@@ -31,7 +31,7 @@ const Clock = () => {
     }, []);
 
     return (
-        <div className="custom-font">
+        <div className="custom-font bg-white p-2 rounded-lg text-sm">
             {date.hour}:{date.minutes}:{date.seconds} {isDay === 'Day' ? 'AM' : 'PM'}
         </div>
     )
